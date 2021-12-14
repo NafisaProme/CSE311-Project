@@ -1,4 +1,5 @@
 let user_id = 1;
+
 class User
 {
     // the constructor to set the values 
