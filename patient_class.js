@@ -2,7 +2,7 @@ let user_id = 1;
 
 class Patient
 {
-    constructor(name, gender, phone, email, birth, address, occupation)
+    constructor(name, gender)// phone, email, birth, address, occupation)
     {
        this.name = name;
        this.gender = gender;
