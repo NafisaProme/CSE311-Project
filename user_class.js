@@ -7,7 +7,7 @@ class User
         this.mail = mail;
         this.name = name;
     }
-
+    
     // method declaration 
     login()
     {
