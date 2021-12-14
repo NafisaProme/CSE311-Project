@@ -45,7 +45,7 @@ button.minus{
 .minus:active {
   background-color:darkred;
   
-  transform: translateX(4px);
+  transform: translateX(-4px);
 }
 button.minus:focus{
     outline: none;

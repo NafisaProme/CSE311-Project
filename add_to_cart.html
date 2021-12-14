@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Add to cart button</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="cart_plus_minus.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <button class="minus">
+    
+    <button class="minus" onclick='minus_one()'>
         
         <i class="fa fa-minus" aria-hidden="true"></i>
     </button>
     <button class="cart">
-        <span>Add to Cart</span>
+        <span id = 'demo'>Add to Cart</span>
         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
 
-        </button>
-        <button class="plus">
-            
-            <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
+    </button>
+    <button class="plus" onclick='plus_one()'>
+        
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+    
+    <script src = 'Main_class.js'></script>
+        
 </body>
 </html>
