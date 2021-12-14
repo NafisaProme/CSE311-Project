@@ -1,1 +1,1 @@
-import * from "pa"
+"Nafisa Prome"
