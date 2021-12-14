@@ -1,3 +1,4 @@
+
 class User
 {
     // the constructor to set the values 
@@ -7,7 +8,7 @@ class User
         this.mail = mail;
         this.name = name;
     }
-    
+
     // method declaration 
     login()
     {
@@ -19,3 +20,5 @@ let user = new User('Zia@gmail.com', 'Zia');
 
 console.log(user.mail);
 user.login();
+
+"RifatXia"
