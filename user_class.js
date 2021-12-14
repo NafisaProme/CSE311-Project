@@ -1,12 +1,14 @@
-
+let user_id = 1;
 class User
 {
     // the constructor to set the values 
-    constructor(mail, name)
+    constructor(first_name, last_name)
     {
         // variables are decalred and set here 
-        this.mail = mail;
-        this.name = name;
+       this.first_name = first_name;
+       this.last_name = last_name;
+       this.user_id = user_id;
+       user_id++;
     }
 
     // method declaration 
@@ -15,10 +17,3 @@ class User
         console.log(this.name + ' has logged in\n');
     }
 }
-
-let user = new User('Zia@gmail.com', 'Zia');
-
-console.log(user.mail);
-user.login();
-
-"RifatXia HMS"
