@@ -19,5 +19,3 @@ let user = new User('Zia@gmail.com', 'Zia');
 
 console.log(user.mail);
 user.login();
-
-//ZiaRifatXia
