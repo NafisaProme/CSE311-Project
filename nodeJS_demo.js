@@ -4,6 +4,7 @@ var url = require('url'); //url parsings
 var fs = require ('fs'); // file read, write and all the functions
 var events = require('events'); // events and event handlers
 var formidable = require('formidable'); // uploading files
+var mysql = require('mysql');
 
 // import own modules 
 // let date_time = require('./nodeJS_demo');
@@ -78,3 +79,58 @@ var formidable = require('formidable'); // uploading files
 // eventEmitter.on('scream', myEventHandler);
 // //Fire the 'scream' event:
 // eventEmitter.emit('scream');
+
+// var 
+// {
+//     createPool
+// } = require('mysql');
+
+// const pool = createPool({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'test',
+//     connectionLimit: 3
+// })
+
+// creating a connection 
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "mydb"
+});
+
+con.connect(function (err) {
+    if (err) throw err;
+
+    // creating a database 
+    // con.query("Create database mydb", function(err, res)
+    // {
+    //     if(err) throw err
+
+    //     console.log('Database created');
+    // });
+
+    // var sql = "insert into customer values(1, 'Zia')";
+    // con.query(sql, function (err, result) {
+    //     if (err) throw err;
+    //     console.log("Table created");
+    // });
+
+    
+    // var sql = con.query("insert into person values('1', 'Zia', 'M')");
+    // con.query(sql, function(err, res)
+    // {
+        //     if(err) throw err;
+        //     console.log('Data inserted');
+        // });
+        
+    con.query("select * from customer", function(err, res, fields)
+    {
+        if(err) throw err;
+
+        console.log(res);
+    })
+});
+

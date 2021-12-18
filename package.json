@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "formidable": "^2.0.1",
+    "mysql": "^2.18.1"
+  },
+  "name": "cse311-project",
+  "version": "1.0.0",
+  "main": "Main_class.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RifatXia/CSE311-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RifatXia/CSE311-Project/issues"
+  },
+  "homepage": "https://github.com/RifatXia/CSE311-Project#readme",
+  "description": ""
+}
