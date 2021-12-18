@@ -19,7 +19,7 @@ button.minus{
     cursor: pointer;
     margin: 5px;
     background: darkgoldenrod;
-    border:darkgoldenrod;
+    /* border:darkgoldenrod; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +38,7 @@ button.minus{
     margin-left: 200px;
     column-fill: transparent;
     transition: 400ms;
-    
+    color: transparent;
 }
 .minus:hover {background-color:#fdbb2d}
 
@@ -97,7 +97,7 @@ button.plus{
     cursor: pointer;
     margin: 5px;
     background: darkgoldenrod;
-    border:darkgoldenrod;
+    /* border:darkgoldenrod; */
     display: flex;
     align-items: center;
     justify-content: center;
