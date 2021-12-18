@@ -78,4 +78,3 @@ var formidable = require('formidable'); // uploading files
 // eventEmitter.on('scream', myEventHandler);
 // //Fire the 'scream' event:
 // eventEmitter.emit('scream');
-
