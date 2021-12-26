@@ -93,19 +93,56 @@ var mysql = require('mysql');
 //     connectionLimit: 3
 // })
 
-// creating a connection 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "mydb"
-});
+// creating a connection using the database
+// var con = mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     password: "",
+//     database: "pro"
+// });
 
-con.connect(function (err) {
-    if (err) throw err;
+// api endpoint with moss 
+// rest api connect 
+
+function work()
+{
+    var con = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        pass: '',
+        database: 'pro'
+    })
+
+    con.connect(function (err) {
+        if (err) throw err;
+
+        con.query('insert into info values("1101", "name1"), ("210", "name2")', function (err, res) {
+            if (err) throw err;
+
+            console.log("Inserted");
+        })
+    })
+    // add event listener
+}
+
+// con.connect(function(err)
+// {
+//     if(err) throw err;
+
+//     con.query('select * from info', function(err, res)
+//     {
+//         if(err) throw err
+
+//         console.log(res);
+//     })
+// })
+
+// using the queries accordingly 
+// con.connect(function (err) {
+//     if (err) throw err;
 
     // creating a database 
-    // con.query("Create database mydb", function(err, res)
+    // con.query("Create database pro", function(err, res)
     // {
     //     if(err) throw err
 
@@ -118,19 +155,31 @@ con.connect(function (err) {
     //     console.log("Table created");
     // });
 
-    
+
     // var sql = con.query("insert into person values('1', 'Zia', 'M')");
     // con.query(sql, function(err, res)
     // {
-        //     if(err) throw err;
-        //     console.log('Data inserted');
-        // });
-        
-    con.query("select * from customer", function(err, res, fields)
-    {
-        if(err) throw err;
+    //     if(err) throw err;
+    //     console.log('Data inserted');
+    // });
 
-        console.log(res);
-    })
-});
+    // con.query("select * from emps", function(err, res, fields)
+    // {
+    //     if(err) throw err;
 
+    //     console.log(res);
+    // })
+
+    // con.query("create table info(ID int, name varchar(30))", function(err, res)
+    // {
+    //     if(err) throw err
+
+    //     console.log("Table created");
+    // })
+
+    // con.query('select * from info', function (err, res) {
+    //     if (err) throw err;
+
+    //     console.log(res);
+    // })
+// })

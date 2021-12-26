@@ -16,5 +16,16 @@ function minus_one()
     else
         document.getElementById('demo').innerHTML = "Add to Cart";
 
+}
 
+function submit_login()
+{
+    var login_info = {};
+    login_info['name'] = document.getElementById('name').value;
+    login_info['pass'] = document.getElementById('pass').value;
+
+    console.log(login_info.name);
+
+    document.getElementById('name1').innerHTML = login_info.name
+    document.getElementById('pass1').innerHTML = login_info.pass
 }
