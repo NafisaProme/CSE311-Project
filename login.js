@@ -33,7 +33,18 @@ app.post("/", function(req, res)
         {
             res.redirect("/welcome.html");
         }
+        else
+        {
+            res.redirect("/");
+        }
+
+        res.end();
     })
 })
+
+app.get("/welcome", function(req, res)
+{
+    res.sendFile(__dirname + "/welcome.html")
+;})
 
 app.listen(8080);
