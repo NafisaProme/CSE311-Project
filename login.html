@@ -9,21 +9,15 @@
     <div class="loginbox">
         <img src="avatar.jpg" class="avatar" >
         <h1>Login Here</h1>
-        <form autocomplete="off">
-            <p id='name1'>Username</p>
-            <input id = 'name' type="text" placeholder="Enter Username">
-            
-            <p id='pass1'>Password</p>
-            <input id = 'pass' type="password" placeholder="Enter password">
-            
-            <input type="submit" name="" value="Login" onclick="work()">
-            
+        <form method="get" action="afterlogin.html">
+            <p>Username</p> 
+            <input type="text" name="" placeholder="Enter Username" id="namer">
+            <p>Password</p>
+            <input type="password" name="" placeholder="Enter Password" id="id">
+            <input type="submit" name="" value="Login">
             <a href="http://127.0.0.1:5500/link.html">Forgot your password?</a><br>
             <a href="http://127.0.0.1:5500/acc.html">Don't have an account?</a>
         </form>
-        
-
-        <script src = 'nodeJS_demo.js'></script>
 
     </div>
 </body>

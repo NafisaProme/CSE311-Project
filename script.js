@@ -1,29 +1,31 @@
-var express = require('express');
-var mysql = require('mysql');
-var app = express();
-
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'pro'
-});
-
-connection.connect(function(err)
+function work()
 {
-    if(err) return err;
+    // var express = require('express');
+    // var mysql = require('mysql');
+    // var app = express();
 
-    console.log('Connected');
-});
+    // var connection = mysql.createConnection({
+    //     host: 'localhost',
+    //     user: 'root',
+    //     password: '',
+    //     database: 'pro'
+    // });
 
-app.get('/', function(req, res)
-{
-    connection.query('select * from info', function(err, res, fields)
-    {
-        if(err) return err;
+    // connection.connect(function (err) {
+    //     if (err) return err;
 
-        console.log(res);
-    })
-})
+    //     console.log('Connected');
+    // });
 
-app.listen(8080);
+    // app.get('/', function (req, res) {
+    //     connection.query('insert into info values(null, "Tutul")', function (err, res, fields) {
+    //         if (err) return err;
+
+    //         console.log(res);
+    //     })
+    // })
+
+    // app.listen(8080);
+
+    document.getElementById('name1').innerHTML = 'Zia';
+}
