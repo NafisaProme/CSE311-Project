@@ -13,6 +13,7 @@
 //     }
 // }
 
+// change element id to username for using the login page 
 const username = document.getElementById('fname');
 const password = document.getElementById('password');
 
