@@ -1,50 +1,48 @@
 const mysql = require("mysql");
-const express = require('express');
+const express = require("express");
+const bodyParser = require("body-parser");
+const encoder = bodyParser.urlencoded();
 
 const app = express();
 app.use("/assets", express.static("assets"));
 
-const connection = mysql.createConnection(
-{
+const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
     database: "pro"
-}
-)
+});
 
-connection.connect(function(err)
-{
-    if(err) return err;
+// connect to the database
+connection.connect(function (error) {
+    if (error) throw error
+    else console.log("connected to the database successfully!")
+});
 
-    console.log("Connected");
+
+app.get("/", function (req, res) {
+    res.sendFile(__dirname + "/index.html");
 })
 
-app.get("/", function(req, res)
-{
-    res.sendFile(__dirname + "/login.html");
-})
+app.post("/", encoder, function (req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
 
-app.post("/", function(req, res)
-{
-    connection.query("Select * from doctor where name = ? and id = ?", function(error, results, fields)
-    {
-        if(results.length > 0)
-        {
-            res.redirect("/welcome.html");
-        }
-        else
-        {
+    connection.query("select * from loginuser where user_name = ? and user_pass = ?", [username, password], function (error, results, fields) {
+        if (results.length > 0) {
+            res.redirect("/welcome");
+        } else {
             res.redirect("/");
         }
-
         res.end();
     })
 })
 
-app.get("/welcome", function(req, res)
-{
+// when login is success
+app.get("/welcome", function (req, res) {
     res.sendFile(__dirname + "/welcome.html")
-;})
+})
 
+
+// set app port 
 app.listen(8080);

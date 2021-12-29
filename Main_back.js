@@ -42,10 +42,8 @@ app.get('/get', (req, res) =>
     });
 });
 
+app.listen(8080);
+
 // app.listen(3000, () => {
 //     console.log("Cholse");
 // });
-
-app.listen(8080, () => {
-    console.log("Cholse");
-});

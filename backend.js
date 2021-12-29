@@ -22,7 +22,7 @@ let con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "mydb",
+  database: "pro",
 });
 
 con.connect(function(err) {
@@ -53,6 +53,32 @@ app.post('/insert', (req, res) => {
         res.send("Done");
     });
 });
+
+app.post('/login', (req, res) =>
+{
+	let name = req.body.name;
+	let address = req.body.address;
+
+	console.log(name);
+	console.log(address);
+
+	let sql = `select * from customers where name = '${name}' and address = '${address}'`;
+	con.query(sql, function(err, result, fields)
+	{
+		if(err) throw err;
+
+		console.log(result);
+
+		if(result.length > 0)
+		{
+			res.send("Successful");
+		}
+		else
+		{
+			res.send("Hoynai");
+		}
+	});
+})
 
 app.listen(3000, () => {
     console.log("Cholse");
