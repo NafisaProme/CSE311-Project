@@ -28,30 +28,34 @@ let con = mysql.createConnection(
     database: "project",
 });
 
-con.connect(function (err) 
+con.connect(function (err)
 {
-    if (err) throw err;
+    if(err) throw err;
     console.log("Connected!");
+})
+
+app.get('/get', (req, res) =>
+{
+    const username = req.body.username;
+    const password = req.body.password;
+
+    let sql = `select * from doctor where name = '${username}' and password = '${password}'`
+
+    con.query(sql, function(err, result, fields)
+    {
+        if(err) throw err;
+
+        res.json(result);
+    });
 });
-
-// app.get('/get', (req, res) =>
-// {
-//     let sql = `select * from doctor`;
-
-//     con.query(sql, function(err, result, fields)
-//     {
-//         if(err) throw err;
-
-//         res.send(result);
-//     });
-// });
 
 app.post('/create', (req, res) =>
 {
     const username = req.body.username;
     const password = req.body.password;
+    const email = req.body.email;
 
-    let sql = `insert into doctor values(null, '${username}', '${password}')`;
+    let sql = `insert into doctor values(null, '${username}', '${password}', '${email}')`;
 
     con.query(sql, function(err, result)
     {
