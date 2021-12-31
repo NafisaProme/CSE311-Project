@@ -22,7 +22,7 @@ let con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "pro",
+  database: "project",
 });
 
 con.connect(function(err) {
@@ -31,7 +31,7 @@ con.connect(function(err) {
 });
 
 app.get('/get', (req, res) => {
-    con.query("SELECT name, address FROM customers", function (err, result, fields) {
+    con.query("SELECT * FROM doctor", function (err, result, fields) {
         if (err) throw err;
         console.log(result);
         res.send(result);

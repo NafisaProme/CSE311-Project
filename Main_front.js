@@ -17,7 +17,6 @@
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 const email = document.getElementById('email');
-const status = document.getElementById('status');
 const viewer = document.getElementById('viewer');
 
 const create = async () =>
@@ -35,26 +34,42 @@ const create = async () =>
     });
 }
 
+const all_info = async () =>
+{
+    let response = await axios(
+    {
+        url: 'http://localhost:8080/all_info',
+        method: 'get'
+    })
+
+    for (let i = 0; i < response.data.length; i++) 
+    {
+        const element = response.data[i];
+        
+    }
+}
+
 const get_data = async () =>
 {
     let response = await axios(
     {
-        url: 'http://localhost:8080/get',
-        method: 'get',
-        data:
-        {
-            'username': username.value,
-            'password': password.value,
-        }
+        url: 'http://localhost:8080/get_data',
+        method: 'get'
     })
-    
-    // for(let i = 0; i < response.data.length; i++)
-    // {
-    //     const element = response.data[i];
-    //     status.innerHTML = status.innerHTML + element.username;
-    // }
-    console.log(response.data);
-    // localStorage.setItem("username", ans);
+
+    localStorage.clear();
+    const name = document.getElementById('username');
+
+    for(let i = 0; i < response.data.length; i++)
+    {
+        const element = response.data[i];
+        
+        if(name.value == element.name && password.value == element.password)
+        {
+            localStorage.setItem("name", element.name);
+            localStorage.setItem("id", element.id);
+        }
+    }
 }
 
 const login = async () =>
@@ -76,8 +91,7 @@ const login = async () =>
     }
     else
     {
-        // localStorage.setItem("username", "Prome");
-        // get_data();
+        get_data();
         let url = "/afterlogin.html";
         window.location.assign(url);
     }

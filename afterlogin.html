@@ -6,12 +6,16 @@
     <title>Profile</title>
     <link rel="stylesheet" type="text/css" href="afterlogin.css">
 <body>
-    <div class="Profile" id = "status"></div>
+    <div class="Profile" id="demo">
+        <p id="name"></p>
+        <p id="id"></p>
+    </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="Main_front.js"></script>
     <script>
-        // document.getElementById('status').innerHTML = localStorage.getItem("username");
+        document.getElementById('name').innerHTML = "Name: " + localStorage.getItem("name");
+        document.getElementById('id').innerHTML = "\nID: " + localStorage.getItem("id");
     </script>
 
 </body>

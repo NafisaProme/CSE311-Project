@@ -34,18 +34,25 @@ con.connect(function (err)
     console.log("Connected!");
 })
 
-app.get('/get', (req, res) =>
+app.get('/all_info', (req, res) => 
 {
-    const username = req.body.username;
-    const password = req.body.password;
-
-    let sql = `select * from doctor where name = '${username}' and password = '${password}'`
-
-    con.query(sql, function(err, result, fields)
+    con.query("SELECT * FROM doctor", function (err, result, fields) 
     {
-        if(err) throw err;
+        if (err) throw err;
+        console.log(result);
 
-        res.json(result);
+        res.send(result);
+    });
+});
+
+app.get('/get_data', (req, res) => 
+{
+    con.query("SELECT * FROM doctor", function (err, result, fields)
+    {
+        if (err) throw err;
+        console.log(result);
+        
+        res.send(result);
     });
 });
 
