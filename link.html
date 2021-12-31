@@ -7,12 +7,17 @@
 
 <body>
     <div class="Passwordchange">
-        <form>
-           <p>Email/Phone</p>
-            <input type="text" name="" placeholder="Enter your email">
-            <p>Corfirmation code:</p>
-            <input type="text" name="" placeholder="Enter the confirmation">
+        <form onsubmit="sendEmail()">
+            <p>Email</p>
+            <input type="text" name="" placeholder="Enter your email" id="mail">
+            <!-- <p>Corfirmation code:</p>
+            <input type="text" name="" placeholder="Enter the confirmation"> -->
             <input type="submit" name="" value="Login">
+        </form>
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="Main_front.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </head>
 </html>

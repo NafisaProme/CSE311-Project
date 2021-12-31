@@ -23,7 +23,7 @@ const arektaBalerMethod = async () => {
 
     for (let i = 0; i < response.data.length; i++) {
         const element = response.data[i];
-        status.innerText = status.innerText + element.name + " " + element.address + "\n";
+        status.innerText = status.innerText + element.name + "  " + element.address + "\n";
 
         // status.innerHTML += `<br> ${element.name} <br> ${element.address} <br>`
     }

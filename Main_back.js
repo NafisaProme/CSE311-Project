@@ -34,17 +34,6 @@ con.connect(function (err)
     console.log("Connected!");
 })
 
-app.get('/all_info', (req, res) => 
-{
-    con.query("SELECT * FROM doctor", function (err, result, fields) 
-    {
-        if (err) throw err;
-        console.log(result);
-
-        res.send(result);
-    });
-});
-
 app.get('/get_data', (req, res) => 
 {
     con.query("SELECT * FROM doctor", function (err, result, fields)

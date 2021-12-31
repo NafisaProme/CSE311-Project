@@ -38,16 +38,18 @@ const all_info = async () =>
 {
     let response = await axios(
     {
-        url: 'http://localhost:8080/all_info',
+        url: 'http://localhost:8080/get_data',
         method: 'get'
     })
-
+    
     for (let i = 0; i < response.data.length; i++) 
     {
+        const display = document.getElementById(`display${i + 1}`);
         const element = response.data[i];
-        
+        display.innerHTML += `<br> Doctor's ID: ${element.id} <br> Doctor's Name: ${element.name} <br>`
     }
 }
+
 
 const get_data = async () =>
 {
@@ -95,4 +97,28 @@ const login = async () =>
         let url = "/afterlogin.html";
         window.location.assign(url);
     }
+}
+
+function submitForm(e)
+{
+    e.preventDefault();
+    let name = 'Zia';
+    let message = 'Hello, Rifat';
+    let email = document.getElementById('mail');
+
+    sendEmail(name, email.value, message);
+}
+
+function sendEmail(name, email, message)
+{
+    Email.send(
+    {
+        Host: "smtp.gmail.com",
+        Username: 'cooperhospitalbd@gmail.com',
+        Password: 'ZiaProme',
+        To: 'zia.chowdhury@northsouth.edu',
+        From: 'cooperhospitalbd@gmail.com',
+        Subject: `${name} sent you a message`,
+        Body: `Name: ${name} <br> Email: ${email} <br> Message: ${message}`
+    }).then((message) => windows.alert("Mail has been sent"))
 }
