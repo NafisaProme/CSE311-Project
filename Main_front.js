@@ -17,6 +17,7 @@
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 const email = document.getElementById('email');
+const birth_date = document.getElementById('birth_date');
 const viewer = document.getElementById('viewer');
 
 const create = async () =>
@@ -29,7 +30,8 @@ const create = async () =>
         {
             'username': username.value,
             'password': password.value,
-            'email' : email.value
+            'email' : email.value,
+            'birth_date': birth_date.value
         }
     });
 }
@@ -97,28 +99,4 @@ const login = async () =>
         let url = "/afterlogin.html";
         window.location.assign(url);
     }
-}
-
-function submitForm(e)
-{
-    e.preventDefault();
-    let name = 'Zia';
-    let message = 'Hello, Rifat';
-    let email = document.getElementById('mail');
-
-    sendEmail(name, email.value, message);
-}
-
-function sendEmail(name, email, message)
-{
-    Email.send(
-    {
-        Host: "smtp.gmail.com",
-        Username: 'cooperhospitalbd@gmail.com',
-        Password: 'ZiaProme',
-        To: 'zia.chowdhury@northsouth.edu',
-        From: 'cooperhospitalbd@gmail.com',
-        Subject: `${name} sent you a message`,
-        Body: `Name: ${name} <br> Email: ${email} <br> Message: ${message}`
-    }).then((message) => windows.alert("Mail has been sent"))
 }

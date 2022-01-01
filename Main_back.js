@@ -2,7 +2,10 @@ const { response } = require('express');
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
-
+const bodyParser = require('body-parser');
+const exphbs = require('express-handlebars');
+const nodemailer = require('nodemailer');
+const path = require('path');
 
 app.use(express.json({ limit: '500mb' }));
 app.use(express.urlencoded({
@@ -34,6 +37,20 @@ con.connect(function (err)
     console.log("Connected!");
 })
 
+// email sender 
+// app.engine('handlebars', exphbs);
+// app.set('view engine', 'handlebars');
+
+// app.use('/public', express.static(path.join(__dirname, 'public')));
+
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
+// app.get('/', (req, res) =>
+// {
+//     res.send('contact');
+// });
+
 app.get('/get_data', (req, res) => 
 {
     con.query("SELECT * FROM doctor", function (err, result, fields)
@@ -50,8 +67,9 @@ app.post('/create', (req, res) =>
     const username = req.body.username;
     const password = req.body.password;
     const email = req.body.email;
+    const birth_date = req.body.birth_date;
 
-    let sql = `insert into doctor values(null, '${username}', '${password}', '${email}')`;
+    let sql = `insert into doctor values(null, '${username}', '${password}', '${email}', '${birth_date}')`;
 
     con.query(sql, function(err, result)
     {

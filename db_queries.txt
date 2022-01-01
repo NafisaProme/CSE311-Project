@@ -1,3 +1,0 @@
-create table doctor(id int, name varchar(50), password varchar(50));
-insert into doctor values(1, 'Zia', 'Uddin'), (2, 'Nafisa', 'Prome');
-

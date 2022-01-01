@@ -6,11 +6,9 @@
 </head>
 <body>
     <div class="container">
+        <h1> The following are the list of doctors available</h1>
 
-        <input type="submit" name="" value="Login" onclick="all_info()">
-        <br>
-        <!-- <p id="display"></p> -->
-        <div class="box" id="display1">
+        <div class="box" id="display1" onclick="next_page()">
         </div>
         <div class="box" id="display2">
         </div>
@@ -39,6 +37,14 @@
 
     <script src="Main_front.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // function next_page()
+        // {
+        //     let url = "/next_page.html";
+        //     window.location.assign(url);
+        // }
+        all_info();
+    </script>
     
 </body> 
 </html>
