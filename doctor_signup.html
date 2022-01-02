@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
-    <title>Password Change</title>
+
+    <title>Create Doctor</title>
     <link rel="stylesheet" type="text/css" href="acc.css">
 
-<body>
     <div class="Accountcreate">
         <h1>Create an Account</h1>
-        <form autocomplete="off" onsubmit="create();">
-           
-            <input type="text" name="" placeholder="Enter First Name" id="fname">    
+        <form autocomplete="off" onsubmit="create_doctor();">
+
+            <input type="text" name="" placeholder="Enter First Name" id="fname">
             <input type="text" name="" placeholder="Enter Last Name" id="lname">
-            <br>
-            <br>
-            <input type="text" name="" placeholder="Enter Phone Number" id="phone">
-            
+            <br><br>
+
+            <input type="text" name="" placeholder="Username" id="username">
+
+
             <input type="text" name="" placeholder="Enter Email" id="email">
-            <p>Gender:</p>
-            <input type="radio" name="gender" value="male">Male <br>
-            <input type="radio" name="gender" value="female">Female <br>
-            <input type="radio" name="gender" value="custom">Custom
-            <p>Date OF Birth</p>
-            <input type="date" id="send"> 
-            <input type="text" name="" placeholder="Enter Age" id="age"> 
-            <br>
-            <br>
-            <input type="text" name="" placeholder="Specialization" id="occupation"> 
-            <input type="text" name="" placeholder="Address" id="address">
-            <p>Password:</p>
+            <br><br>
+
+            <input type="text" name="" placeholder="Gender" id="gender">
+            <input type="text" name="" placeholder="Enter Blood Group" id="blood">
+            <br><br>
+
+            <p>Date of Birth:</p>
+            <input type="date" id="birth_date">
+            <input type="text" name="" placeholder="Enter Phone Number" id="phone">
+            <br><br>
+
+            <input type="text" name="" placeholder="Specialization" id="spec">
+            <input type="text" name="" placeholder="Address" id="address"> <br><br>
             <input type="password" name="" placeholder="Enter Password" id="password"> <br><br>
             <input type="password" name="" placeholder="Confirm Password">
             <input type="submit" name="" value="Register" style="position:relative;left:60px;">
 
             <input type="reset" name="" value="Reset" style="position:relative;left:60px;">
         </form>
-        
+
 
     </div>
 
     <script src="Main_front.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        
-</body>
+
+    </body>
 </head>
+
 </html>

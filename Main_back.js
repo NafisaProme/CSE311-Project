@@ -1,11 +1,6 @@
-const { response } = require('express');
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
-const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
-const nodemailer = require('nodemailer');
-const path = require('path');
 
 app.use(express.json({ limit: '500mb' }));
 app.use(express.urlencoded({
@@ -37,23 +32,9 @@ con.connect(function (err)
     console.log("Connected!");
 })
 
-// email sender 
-// app.engine('handlebars', exphbs);
-// app.set('view engine', 'handlebars');
-
-// app.use('/public', express.static(path.join(__dirname, 'public')));
-
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-
-// app.get('/', (req, res) =>
-// {
-//     res.send('contact');
-// });
-
 app.get('/get_data', (req, res) => 
 {
-    con.query("SELECT * FROM doctor", function (err, result, fields)
+    con.query("SELECT * FROM patient", function (err, result, fields)
     {
         if (err) throw err;
         console.log(result);
@@ -62,18 +43,65 @@ app.get('/get_data', (req, res) =>
     });
 });
 
-app.post('/create', (req, res) =>
+app.post('/create_patient', (req, res) =>
 {
+    const fname = req.body.fname;
+    const lname = req.body.lname;
     const username = req.body.username;
-    const password = req.body.password;
     const email = req.body.email;
+    const gender = req.body.gender;
+    const blood = req.body.blood;
     const birth_date = req.body.birth_date;
+    const phone = req.body.phone;
+    const occupation = req.body.occupation;
+    const address = req.body.address;
+    const password = req.body.password;
 
-    let sql = `insert into doctor values(null, '${username}', '${password}', '${email}', '${birth_date}')`;
+    console.log(occupation);
+
+    let sql = `insert into patient values(null, '${username}','${fname}', '${lname}', '${phone}', '${email}','${gender}','${blood}','${birth_date}','${occupation}','${address}','${password}')`;
 
     con.query(sql, function(err, result)
     {
         if(err) throw err;
+    })
+})
+
+app.post('/create_doctor', (req, res) =>
+{
+    const fname = req.body.fname;
+    const lname = req.body.lname;
+    const username = req.body.username;
+    const email = req.body.email;
+    const gender = req.body.gender;
+    const blood = req.body.blood;
+    const birth_date = req.body.birth_date;
+    const phone = req.body.phone;
+    const spec = req.body.spec;
+    const address = req.body.address;
+    const password = req.body.password;
+
+    let sql = `insert into doctor values(null, '${username}','${fname}', '${lname}', '${phone}', '${email}','${gender}','${blood}','${birth_date}','${spec}','${address}','${password}')`;
+
+    con.query(sql, function(err, result)
+    {
+        if(err) throw err;
+    })
+})
+
+app.post('/appoint', (req, res) =>
+{
+    const app_user_id = req.body.app_user_id;
+    const app_doc_id = req.body.app_doc_id;
+    const app_username = req.body.app_username;
+    const app_date = req.body.app_date;
+
+    let sql = `insert into appointment values(null, '${app_user_id}', '${app_doc_id}', '${app_date}')`;
+
+    con.query(sql, function(err, result)
+    {
+        if(err) throw err;
+        console.log('Appointment done!');
     })
 })
 
@@ -82,7 +110,7 @@ app.post('/login', (req, res) =>
     const username = req.body.username;
     const password = req.body.password;
 
-    let sql = `select * from doctor where name = '${username}' and password = '${password}'`;
+    let sql = `select * from patient where username = '${username}' and pass = '${password}'`;
 
     con.query(sql, function(err, result, fields)
     {

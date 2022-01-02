@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" type="text/css" href="cart.css">
+
+    <link rel="stylesheet" type="text/css"
+
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+        <h1>Shopping Cart</h1>
+
+        <div class="cart">
+
+            <div class="products">
+
+                <div class="product">
+
+                    <img src="images/med1.png">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">Azithral 500mg</h3>
+
+                        <h4 class="product-price">Price $25</h4>
+
+                        <p id="quantity"></p>
+
+                        <p class="product-remove">
+
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+
+                            <button class="plus" onclick="plus_one();">+</button>
+
+                        </p>
+
+                        <p class="product-display">
+                        
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        
+                            <span id="demo">1</span>
+                        
+                        </p>
+
+                        <p class="product-add">
+
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+
+                            <span class="add" onclick="minus_one()">-</span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="cart-total">
+
+                <p>
+
+                    <span>Total Price</span>
+
+                    <span>₹ 3,000</span>
+
+                </p>
+
+                <p>
+
+                    <span>Number of Items</span>
+
+                    <span>2</span>
+
+                </p>
+
+                <p>
+
+                    <span>You Save</span>
+
+                    <span>₹ 1,000</span>
+
+                </p>
+
+                <a href="#">Proceed to Checkout</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function plus_one() {
+                const item = document.getElementById('demo');
+                item++;
+                document.getElementById('demo').innerHTML = item;
+            }
+
+        function minus_one() {
+            if (items >= 1)
+                items--;
+
+            if (items)
+                document.getElementById('demo').innerHTML = items + " in bag";
+            else
+                document.getElementById('demo').innerHTML = "Add to Cart";
+
+        }
+    </script>
+
+</body>
+
+
+</html>

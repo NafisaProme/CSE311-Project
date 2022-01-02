@@ -4,14 +4,14 @@
     box-sizing: border-box;
 }
 body{
-    height: 100vh;
+    height: 250px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     background-color: #fff;
-    background-image: linear-gradient(125deg, #f3e0f6 0%, #fff 80%);
+    /* background-image: linear-gradient(125deg, #f3e0f6 0%, #fff 80%); */
 }
 button.minus{
     width: 25px;
@@ -32,6 +32,7 @@ button.minus{
     font-size: 20px;
     font-weight: bolder;
     border: 2px solid black;
+    
 }
 .minus k{
     position: absolute;
@@ -69,6 +70,8 @@ button{
     font-size: 15px;
     font-weight: bolder;
     border: 2px solid black;
+    /* position: relative;
+    left: 50px; */
 }
 .cart i{
     position: absolute;

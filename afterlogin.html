@@ -5,18 +5,55 @@
     
     <title>Profile</title>
     <link rel="stylesheet" type="text/css" href="afterlogin.css">
+    <link rel="stylesheet" type="text/css" href="Home.css">
 <body>
+    <div class="wrapper">
+        <nav>
+            <ul class="links">
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="About_us.html">ABOUT US</a></li>
+                <li><a href="block.html">DOCTORS</a></li>
+                <li><a href="">SERVICES</a>
+                    <ul class="dropdown">
+                        <li><a href="Test.html">TESTS</a></li>
+                    </ul>
+                </li>
+                <li><a href="">CONTACT</a>
+                    <ul class="dropdown">
+                        <li><a href="">0123456789</a></li>
+                        <li><a href="tel:01883434169">CALL US</a></li>
+                        <li><a href="mailto:cooperhospital@gmail.com">EMAIL US</a></li>
+                    </ul>
+                </li>
+                <li><a href="appointment.html">APPOINTMENT</a></li>
+                <li><a href="Home.html">LOGOUT</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div class="Profile" id="demo">
-        <img src="images/Zia3.jpg" height="200" width="260">
-        <p id="name"></p>
-        <p id="id"></p>
+        <h1>PROFILE</h1>
+        <p id="id"></p><br>
+        <p id="name"></p><br>
+        <p id="phone"></p><br>
+        <p id="email"></p><br>
+        <p id="gender"></p><br>
+        <p id="blood"></p><br>
+        <p id="occupation"></p><br>
+        <p id="address"></p><br>
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="Main_front.js"></script>
     <script>
-        document.getElementById('name').innerHTML = "Name: " + localStorage.getItem("name");
-        document.getElementById('id').innerHTML = "\nID: " + localStorage.getItem("id");
+        document.getElementById('id').innerHTML = "ID: " + localStorage.getItem("id");
+        document.getElementById('name').innerHTML = "\nName: " + localStorage.getItem("fname") + " " + localStorage.getItem("lname");
+        document.getElementById('phone').innerHTML = "\nPhone: " + localStorage.getItem("phone");
+        document.getElementById('email').innerHTML = "\Email: " + localStorage.getItem("email");
+        document.getElementById('gender').innerHTML = "\nGender: " + localStorage.getItem("gender");
+        document.getElementById('blood').innerHTML = "\nBlood: " + localStorage.getItem("blood");
+        document.getElementById('occupation').innerHTML = "\nOccupation: " + localStorage.getItem("occupation");
+        document.getElementById('address').innerHTML = "\nAddress: " + localStorage.getItem("address");
     </script>
 
 </body>

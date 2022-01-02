@@ -9,8 +9,8 @@ body{
     
 }
 .Accountcreate{
-    width: 540px;
-    height:680px;
+    width: 480px;
+    height:600px;
     background:#000;
     color: #fff;
     top: 50%;
@@ -19,7 +19,7 @@ body{
     transform: translate(-50%,-50%);
     box-sizing: border-box;
     padding: 70px 30px;
-    border-radius: 20;
+    border-radius: 20px;
     
 }
 h1{
