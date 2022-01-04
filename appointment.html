@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="appointment.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <ul class="links">
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="About_us.html">ABOUT US</a></li>
+                <li><a href="block.html">DOCTORS</a></li>
+                <li><a href="">SERVICES</a>
+                    <ul class="dropdown">
+                        <li><a href="Test.html">TESTS</a></li>
+                    </ul>
+                </li>
+                <li><a href="">CONTACT</a>
+                    <ul class="dropdown">
+                        <li><a href="">0123456789</a></li>
+                        <li><a href="tel:01883434169">CALL US</a></li>
+                        <li><a href="mailto:cooperhospital@gmail.com">EMAIL US</a></li>
+                    </ul>
+                </li>
+                <li><a href="appointment.html">APPOINTMENT</a></li>
+                <li><a href="http://127.0.0.1:5500/login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="loginbox">
+        <h1>Make an Appointment</h1>
+
+        <form autocomplete="off" onsubmit="appoint(); success()">
+            <input type="text" name="" placeholder="Enter User ID" id="app_user_id" required>
+            <input type="text" name="" placeholder="Enter Doctor's ID" id="app_doc_id" required>
+            <input type="text" name="" placeholder="Enter Username" id="app_username" required>
+            <p>Preferred date & time</p><br>
+            <input type="datetime-local" id="app_date">
+            <input type="submit" name="" value="Request">
+            
+            
+            <p id="viewer"></p>
+        </form>
+
+    </div>
+    <script src="Main_front.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        function success() 
+        {
+            window.alert("Your appointment has been created successfully")
+        }
+    </script>
+</body>
+</html>
