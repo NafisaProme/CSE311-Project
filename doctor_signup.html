@@ -8,16 +8,16 @@
 
     <div class="Accountcreate">
         <h1>Create an Account</h1>
-        <form autocomplete="off" onsubmit="create_doctor();">
+        <form autocomplete="off" onsubmit="create_doctor(); success();">
 
-            <input type="text" name="" placeholder="Enter First Name" id="fname">
+            <input type="text" name="" placeholder="Enter First Name" id="fname" required>
             <input type="text" name="" placeholder="Enter Last Name" id="lname">
             <br><br>
 
             <input type="text" name="" placeholder="Username" id="username">
 
 
-            <input type="text" name="" placeholder="Enter Email" id="email">
+            <input type="text" name="" placeholder="Enter Email" id="email" required>
             <br><br>
 
             <input type="text" name="" placeholder="Gender" id="gender">
@@ -26,7 +26,7 @@
 
             <p>Date of Birth:</p>
             <input type="date" id="birth_date">
-            <input type="text" name="" placeholder="Enter Phone Number" id="phone">
+            <input type="text" name="" placeholder="Enter Phone Number" id="phone" required>
             <br><br>
 
             <input type="text" name="" placeholder="Specialization" id="spec">
@@ -43,6 +43,11 @@
 
     <script src="Main_front.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        function success() {
+            window.alert("Doctor account has been created successfully");
+        }
+    </script>
 
     </body>
 </head>

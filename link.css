@@ -1,16 +1,19 @@
 body{
     margin: 0;
     padding: 0;
-    background: url(images/hos3.png);
+    background: url(images/Hospital.png);
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
     box-sizing: border-box;
-    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 .Passwordchange{
     width: 320px;
-    height:420px;
+    height:350px;
     background:#000;
     color: #fff;
     top: 50%;

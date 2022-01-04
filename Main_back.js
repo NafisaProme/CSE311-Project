@@ -37,6 +37,17 @@ app.get('/get_data', (req, res) =>
     con.query("SELECT * FROM patient", function (err, result, fields)
     {
         if (err) throw err;
+        // console.log(result);
+        
+        res.send(result);
+    });
+});
+
+app.get('/get_data_doctor', (req, res) => 
+{
+    con.query("SELECT * FROM doctor", function (err, result, fields)
+    {
+        if (err) throw err;
         console.log(result);
         
         res.send(result);
@@ -111,6 +122,24 @@ app.post('/login', (req, res) =>
     const password = req.body.password;
 
     let sql = `select * from patient where username = '${username}' and pass = '${password}'`;
+
+    con.query(sql, function(err, result, fields)
+    {
+        if(err) throw err;
+
+        if(result.length > 0)
+            res.send(result);
+        else
+            res.send("Wrong Username or password!!");
+    })
+})
+
+app.post('/login_doctor', (req, res) =>
+{
+    const username = req.body.username;
+    const password = req.body.password;
+
+    let sql = `select * from doctor where username = '${username}' and pass = '${password}'`;
 
     con.query(sql, function(err, result, fields)
     {

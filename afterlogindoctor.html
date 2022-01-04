@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    
+
     <title>Profile</title>
     <link rel="stylesheet" type="text/css" href="afterlogin.css">
     <link rel="stylesheet" type="text/css" href="Home.css">
+
 <body>
     <div class="wrapper">
         <nav>
@@ -33,29 +35,30 @@
 
     <div class="Profile" id="demo">
         <h1>PROFILE</h1>
-        <p id="p_id"></p><br>
-        <p id="p_name"></p><br>
-        <p id="p_phone"></p><br>
-        <p id="p_email"></p><br>
-        <p id="p_gender"></p><br>
-        <p id="p_blood"></p><br>
-        <p id="p_occupation"></p><br>
-        <p id="p_address"></p><br>
+        <p id="dcc_id"></p><br>
+        <p id="dcc_name"></p><br>
+        <p id="dcc_phone"></p><br>
+        <p id="dcc_email"></p><br>
+        <p id="dcc_gender"></p><br>
+        <p id="dcc_blood"></p><br>
+        <p id="dcc_spec"></p><br>
+        <p id="dcc_address"></p><br>
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="Main_front.js"></script>
     <script>
-        document.getElementById('p_id').innerHTML = "ID: " + localStorage.getItem("p_id");
-        document.getElementById('p_name').innerHTML = "\nName: " + localStorage.getItem("p_fname") + " " + localStorage.getItem("p_lname");
-        document.getElementById('p_phone').innerHTML = "\nPhone: " + localStorage.getItem("p_phone");
-        document.getElementById('p_email').innerHTML = "\Email: " + localStorage.getItem("p_email");
-        document.getElementById('p_gender').innerHTML = "\nGender: " + localStorage.getItem("p_gender");
-        document.getElementById('p_blood').innerHTML = "\nBlood: " + localStorage.getItem("p_blood");
-        document.getElementById('p_occupation').innerHTML = "\nOccupation: " + localStorage.getItem("p_occupation");
-        document.getElementById('p_address').innerHTML = "\nAddress: " + localStorage.getItem("p_address");
+        document.getElementById('dcc_id').innerHTML = "ID: " + localStorage.getItem("dcc_id");
+        document.getElementById('dcc_name').innerHTML = "\nName: " + localStorage.getItem("dcc_fname") + " " + localStorage.getItem("dcc_lname");
+        document.getElementById('dcc_phone').innerHTML = "\nPhone: " + localStorage.getItem("dcc_phone");
+        document.getElementById('dcc_email').innerHTML = "\Email: " + localStorage.getItem("dcc_email");
+        document.getElementById('dcc_gender').innerHTML = "\nGender: " + localStorage.getItem("dcc_gender");
+        document.getElementById('dcc_blood').innerHTML = "\nBlood: " + localStorage.getItem("dcc_blood");
+        document.getElementById('dcc_spec').innerHTML = "\nSpecialization: " + localStorage.getItem("dcc_spec");
+        document.getElementById('dcc_address').innerHTML = "\nAddress: " + localStorage.getItem("dcc_address");
     </script>
 
 </body>
 </head>
+
 </html>

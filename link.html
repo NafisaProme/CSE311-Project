@@ -4,15 +4,40 @@
     
     <title>Password Change</title>
     <link rel="stylesheet" type="text/css" href="link.css">
+    <link rel="stylesheet" type="text/css" href="Home.css">
 
 <body>
+    <div class="wrapper">
+        <nav>
+            <ul class="links">
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="About_us.html">ABOUT US</a></li>
+                <li><a href="block.html">DOCTORS</a></li>
+                <li><a href="">SERVICES</a>
+                    <ul class="dropdown">
+                        <li><a href="Test.html">TESTS</a></li>
+                    </ul>
+                </li>
+                <li><a href="">CONTACT</a>
+                    <ul class="dropdown">
+                        <li><a href="">01883434169</a></li>
+                        <li><a href="tel:01883434169">CALL US</a></li>
+                        <li><a href="mailto:cooperhospital@gmail.com">EMAIL US</a></li>
+                    </ul>
+                </li>
+                <li><a href="appointment.html">APPOINTMENT</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div class="Passwordchange">
         <form>
             <p>Email</p>
             <input type="text" name="" placeholder="Enter your email">
             <p id="mail"></p>
-            <!-- <p>Corfirmation code:</p>
-            <input type="text" name="" placeholder="Enter the confirmation"> -->
+            <input type="text" name="" placeholder="New Password: ">
+            <input type="text" name="" placeholder="Confirm New Password: ">
             <input type="submit" name="" value="Login">
         </form>
 

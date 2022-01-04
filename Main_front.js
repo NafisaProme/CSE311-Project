@@ -102,7 +102,7 @@ const all_info = async () =>
 {
     let response = await axios(
     {
-        url: 'http://localhost:8080/get_data',
+        url: 'http://localhost:8080/get_data_doctor',
         method: 'get'
     })
     
@@ -133,17 +133,77 @@ const get_data = async () =>
         
         if(user.value == element.username && pass.value == element.pass)
         {
-            localStorage.setItem("id", element.id);
-            localStorage.setItem("fname", element.fname);
-            localStorage.setItem("lname", element.lname);
-            localStorage.setItem("phone", element.phone);
-            localStorage.setItem("email", element.email);
-            localStorage.setItem("gender", element.gender);
-            localStorage.setItem("blood", element.blood_group);
-            localStorage.setItem("birth_date", element.birth_date);
-            localStorage.setItem("occupation", element.occupation);
-            localStorage.setItem("address", element.address);
+            localStorage.setItem("p_id", element.id);
+            localStorage.setItem("p_fname", element.fname);
+            localStorage.setItem("p_lname", element.lname);
+            localStorage.setItem("p_phone", element.phone);
+            localStorage.setItem("p_email", element.email);
+            localStorage.setItem("p_gender", element.gender);
+            localStorage.setItem("p_blood", element.blood_group);
+            localStorage.setItem("p_birth_date", element.birth_date);
+            localStorage.setItem("p_occupation", element.occupation);
+            localStorage.setItem("p_address", element.address);
         }
+    }
+}
+
+const get_data_doctor = async () =>
+{
+    let user = document.getElementById('user');
+    let pass = document.getElementById('pass');
+
+    let response = await axios(
+    {
+        url: 'http://localhost:8080/get_data_doctor',
+        method: 'get'
+    })
+
+    localStorage.clear();
+    console.log(response.data);
+
+    for(let i = 0; i < response.data.length; i++)
+    {
+        const element = response.data[i];
+        
+        if(user.value == element.username && pass.value == element.pass)
+        {
+            localStorage.setItem("dcc_id", element.id);
+            localStorage.setItem("dcc_fname", element.fname);
+            localStorage.setItem("dcc_lname", element.lname);
+            localStorage.setItem("dcc_phone", element.phone);
+            localStorage.setItem("dcc_email", element.email);
+            localStorage.setItem("dcc_gender", element.gender);
+            localStorage.setItem("dcc_blood", element.blood_group);
+            localStorage.setItem("dcc_birth_date", element.birth_date);
+            localStorage.setItem("dcc_spec", element.specialization);
+            localStorage.setItem("dcc_address", element.address);
+        }
+    }
+}
+
+const login_doctor = async () =>
+{
+    let user = document.getElementById('user');
+    let pass = document.getElementById('pass');
+
+    let response = await axios(
+    {
+        url: 'http://localhost:8080/login_doctor',
+        method: 'post',
+        data:
+        {
+            'username': user.value,
+            'password': pass.value,
+        }
+    });
+
+    if (response.data == "Wrong Username or password!!") {
+        document.getElementById('viewer').innerHTML = response.data;
+    }
+    else {
+        get_data_doctor();
+        let url = "/afterlogindoctor.html";
+        window.location.assign(url);
     }
 }
 
@@ -162,7 +222,7 @@ const login = async () =>
 
     if (response.data == "Wrong Username or password!!")
     {
-        document.getElementById('viewer').innerHTML = response.data;
+        login_doctor();
     }
     else
     {
