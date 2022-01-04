@@ -152,26 +152,4 @@ app.post('/login_doctor', (req, res) =>
     })
 })
 
-// app.post('/login', (req, res) => {
-//     let name = req.body.name;
-//     let address = req.body.address;
-
-//     console.log(name);
-//     console.log(address);
-
-//     let sql = `select * from customers where name = '${name}' and address = '${address}'`;
-//     con.query(sql, function (err, result, fields) {
-//         if (err) throw err;
-
-//         console.log(result);
-
-//         if (result.length > 0) {
-//             res.send("Successful");
-//         }
-//         else {
-//             res.send("Hoynai");
-//         }
-//     });
-// })
-
 app.listen(8080);
